@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
-project(ksef LANGUAGES CXX)
+
+project(ksef_fa3 LANGUAGES CXX)
+project(${PROJECT_NAME} VERSION 0.9.0)
 
 find_package(Qt6 6.10 REQUIRED COMPONENTS Core)
 
