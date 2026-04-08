@@ -32,8 +32,7 @@ namespace
     Podmiot2 makePodmiot2_JanKowalski(QString nrKlienta = QStringLiteral("fdfd778343"))
     {
         Podmiot2 p2{
-            DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-            false, false};
+            DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
         p2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
         p2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
         if (!nrKlienta.isEmpty())
@@ -237,8 +236,7 @@ TEST(Examples, Przyklad_4)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CDE sp. j.")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CDE sp. j.")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Sadowa 1 lok. 3"), QStringLiteral("00-002 Kraków")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("cde@cde.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("fdfd778343"));
@@ -351,8 +349,7 @@ TEST(Examples, Przyklad_5)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CeDeE s.c.")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CeDeE s.c.")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Sadowa 1 lok. 3"), QStringLiteral("00-002 Kraków")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("cde@cde.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("fdfd778343"));
@@ -396,8 +393,7 @@ TEST(Examples, Przyklad_6)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CeDeE s.c.")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CeDeE s.c.")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Sadowa 1 lok. 3"), QStringLiteral("00-002 Kraków")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("cde@cde.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("fdfd778343"));
@@ -441,8 +437,7 @@ TEST(Examples, Przyklad_7)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CeDeE s.c.")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CeDeE s.c.")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Sadowa 1 lok. 3"), QStringLiteral("00-002 Kraków")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("cde@cde.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("fdfd778343"));
@@ -551,8 +546,8 @@ TEST(Examples, Przyklad_9)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("Gmina Bzdziszewo")},
-        true, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("Gmina Bzdziszewo")}};
+    podmiot2.setJST();
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("Bzdziszewo 1"), QStringLiteral("00-007 Bzdziszewo")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("bzdziszewo@tuwartoinwestowac.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("fdfd778343"));
@@ -626,8 +621,7 @@ TEST(Examples, Przyklad_10)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
 
@@ -703,8 +697,7 @@ TEST(Examples, Przyklad_11)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
 
@@ -808,8 +801,7 @@ TEST(Examples, Przyklad_12)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
 
@@ -913,8 +905,7 @@ TEST(Examples, Przyklad_13)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
 
@@ -1016,8 +1007,7 @@ TEST(Examples, Przyklad_24)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("elektrownia@elektrownia.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("99999999"));
@@ -1232,8 +1222,7 @@ TEST(Examples, Przyklad_14)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
 
@@ -1318,8 +1307,7 @@ TEST(Examples, Przyklad_15)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, std::nullopt},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, std::nullopt}};
 
     Fa fa{
         QStringLiteral("PLN"),
@@ -1354,8 +1342,7 @@ TEST(Examples, Przyklad_16)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, std::nullopt},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, std::nullopt}};
 
     Fa fa{
         QStringLiteral("PLN"),
@@ -1393,8 +1380,7 @@ TEST(Examples, Przyklad_17)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
 
@@ -1464,8 +1450,7 @@ TEST(Examples, Przyklad_18)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
 
@@ -1565,8 +1550,7 @@ TEST(Examples, Przyklad_19)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("abc@abc.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
 
@@ -1619,8 +1603,7 @@ TEST(Examples, Przyklad_20)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CDE sp. j.")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CDE sp. j.")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Sadowa 1 lok. 3"), QStringLiteral("00-002 Kraków"), QStringLiteral("a")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("cde@cde.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("fdfd778343"));
@@ -1718,8 +1701,7 @@ TEST(Examples, Przyklad_21)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CDE sp. j.")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("CDE sp. j.")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Sadowa 1 lok. 3"), QStringLiteral("00-002 Kraków"), QStringLiteral("a")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("cde@cde.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("fdfd778343"));
@@ -1821,8 +1803,7 @@ TEST(Examples, Przyklad_22)
     podmiot1.setPrefiksPodatnika(QStringLiteral("PL"));
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaUE{QStringLiteral("DE"), QStringLiteral("999999999")}, QStringLiteral("EFG GmbH")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaUE{QStringLiteral("DE"), QStringLiteral("999999999")}, QStringLiteral("EFG GmbH")}};
     podmiot2.setAdres(Adres{QStringLiteral("DE"), QStringLiteral("Blümchenstraße 1"), QStringLiteral("10999 Berlin")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("johan@shmidt.de"), QStringLiteral("555777999")});
 
@@ -1866,8 +1847,7 @@ TEST(Examples, Przyklad_23)
     auto podmiot1 = makePodmiot1_ABC();
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPozaUE{QStringLiteral("999999999"), QStringLiteral("US")}, QStringLiteral("EFG Ltd.")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPozaUE{QStringLiteral("999999999"), QStringLiteral("US")}, QStringLiteral("EFG Ltd.")}};
     podmiot2.setAdres(Adres{QStringLiteral("US"), QStringLiteral("Flower (St) 1"), QStringLiteral("Seattle, WA 99999")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("john@smith.us"), QStringLiteral("555777999")});
 
@@ -1914,8 +1894,7 @@ TEST(Examples, Przyklad_25)
     podmiot1.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("elektrownia@elektrownia.pl"), QStringLiteral("667444555")});
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("1111111111")}, QStringLiteral("F.H.U. Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("ul. Polna 1"), QStringLiteral("00-001 Warszawa")});
     podmiot2.addDaneKontaktowe(DaneKontaktowe{QStringLiteral("jan@kowalski.pl"), QStringLiteral("555777999")});
     podmiot2.setNrKlienta(QStringLiteral("99999999"));
@@ -2129,8 +2108,7 @@ TEST(Examples, Przyklad_26)
         Adres{QStringLiteral("PL"), QStringLiteral("ul. Kwiatowa 1, 00-001 Warszawa")}};
 
     Podmiot2 podmiot2{
-        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("2222222222")}, QStringLiteral("Jan Kowalski")},
-        false, false};
+        DaneIdentyfikacyjne2{NabywcaPolski{QStringLiteral("2222222222")}, QStringLiteral("Jan Kowalski")}};
     podmiot2.setAdres(Adres{QStringLiteral("PL"), QStringLiteral("Akacjowa 1, 00-001 Warszawa")});
 
     Fa fa{

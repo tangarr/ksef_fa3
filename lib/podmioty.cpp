@@ -47,11 +47,21 @@ QVector<std::reference_wrapper<const internal::XmlNode>> Podmiot1::elements() co
         );
 }
 
-Podmiot2::Podmiot2(DaneIdentyfikacyjne2 daneIdentyfikacyjne, bool jst, bool gv):
+Podmiot2::Podmiot2(DaneIdentyfikacyjne2 daneIdentyfikacyjne):
     _DaneIdentyfikacyjne{std::move(daneIdentyfikacyjne)},
-    _JST{jst ? JST::JEDNOSTKA_SAMORZADU_TERYTORIALNEGO : JST::NIE_DOTYCZY},
-    _GV{gv ? GV::GRUPA_VAT : GV::NIE_DOTYCZY}
+    _JST{JST::NIE_DOTYCZY},
+    _GV{GV::NIE_DOTYCZY}
 {
+}
+
+void Podmiot2::setJST()
+{
+    _JST = JST::JEDNOSTKA_SAMORZADU_TERYTORIALNEGO;
+}
+
+void Podmiot2::setGV()
+{
+    _GV = GV::GRUPA_VAT;
 }
 
 void Podmiot2::setNrEORI(QString nrEORI)

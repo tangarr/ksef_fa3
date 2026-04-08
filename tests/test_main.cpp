@@ -99,8 +99,7 @@ namespace ksef::FA3
         Podmiot2 podmiot2{
             DaneIdentyfikacyjne2{
                 NabywcaPolski{QStringLiteral("1111111111")},
-                QStringLiteral("F.H.U. Jan Kowalski")},
-            false, false};
+                QStringLiteral("F.H.U. Jan Kowalski")}};
         podmiot2.setAdres(Adres{
             QStringLiteral("PL"),
             QStringLiteral("ul. Polna 1"),
@@ -139,8 +138,7 @@ namespace ksef::FA3
         Podmiot2 podmiot2{
             DaneIdentyfikacyjne2{
                 NabywcaUE{QStringLiteral("DE"), QStringLiteral("999999999")},
-                QStringLiteral("EFG GmbH")},
-            false, false};
+                QStringLiteral("EFG GmbH")}};
         podmiot2.setAdres(Adres{
             QStringLiteral("DE"),
             QStringLiteral("Blümchenstraße 1"),
@@ -168,8 +166,7 @@ namespace ksef::FA3
         Podmiot2 podmiot2{
             DaneIdentyfikacyjne2{
                 NabywcaPolski{QStringLiteral("1111111111")},
-                QStringLiteral("Klient")},
-            false, false};
+                QStringLiteral("Klient")}};
         auto result = toXML(podmiot2).value();
         EXPECT_TRUE(compareXML(expected, result)) << result.toStdString();
     }

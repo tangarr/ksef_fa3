@@ -104,7 +104,9 @@ class Podmiot2 : public internal::XmlNamedNode<"Podmiot2">{
     JST _JST;
     GV _GV;
 public:
-    Podmiot2(DaneIdentyfikacyjne2 daneIdentyfikacyjne, bool jst, bool gv);
+    Podmiot2(DaneIdentyfikacyjne2 daneIdentyfikacyjne);
+    void setJST();
+    void setGV();
     void setNrEORI(QString nrEORI);
     void setAdres(Adres adres);
     void setAdresKoresp(AdresKoresp adresKoresp);
