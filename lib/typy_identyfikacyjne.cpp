@@ -49,6 +49,14 @@ QVector<std::reference_wrapper<const internal::XmlNode>> DaneIdentyfikacyjne2::e
         );
 }
 
+DaneIdentyfikacyjne3 DaneIdentyfikacyjne2::toDaneIdentyfikacyjne3() const
+{
+    QString nazwa = _Nazwa.has_value() ? _Nazwa->value()->toString() : QString{};
+    return std::visit([&nazwa](const auto &id) -> DaneIdentyfikacyjne3 {
+        return DaneIdentyfikacyjne3{id, nazwa};
+    }, _switch);
+}
+
 DaneIdentyfikacyjne3::DaneIdentyfikacyjne3(NabywcaPolski nabywcaPolski, QString nazwa) :
     _switch{std::move(nabywcaPolski)},
     _Nazwa{std::move(nazwa)}

@@ -49,6 +49,8 @@ public:
     QVector<std::reference_wrapper<const internal::XmlNode>> elements() const final;
 };
 
+class DaneIdentyfikacyjne3;
+
 class DaneIdentyfikacyjne2 : public internal::XmlNamedNode<"DaneIdentyfikacyjne">{
     internal::XmlSwitch<NabywcaPolski,
                         NabywcaUE,
@@ -61,6 +63,7 @@ public:
     explicit DaneIdentyfikacyjne2(NabywcaPozaUE nabywcaPozaUE, std::optional<QString> nazwa);
     explicit DaneIdentyfikacyjne2(NabywcaBezID nabywcaBezID, std::optional<QString> nazwa);
     QVector<std::reference_wrapper<const internal::XmlNode>> elements() const override;
+    DaneIdentyfikacyjne3 toDaneIdentyfikacyjne3() const;
 };
 
 class DaneIdentyfikacyjne3 : public internal::XmlNamedNode<"DaneIdentyfikacyjne">{

@@ -99,6 +99,54 @@ QVector<std::reference_wrapper<const internal::XmlNode>> Podmiot2::elements() co
         );
 }
 
+Podmiot3 Podmiot2::toPodmiot3(Rola::Typ rola) const
+{
+    Podmiot3 result{this->_DaneIdentyfikacyjne.toDaneIdentyfikacyjne3(), rola};
+    if (_NrEORI.has_value()) {
+        result.setNrEORI(QString{*_NrEORI->value()});
+    }
+    if (_Adres.has_value()) {
+        result.setAdres(*_Adres);
+    }
+    if (_AdresKoresp.has_value()) {
+        result.setAdresKoresp(*_AdresKoresp);
+    }
+    for (const auto &dk : _DaneKontaktowe) {
+        result.addDaneKontaktowe(dk);
+    }
+    if (_NrKlienta.has_value()) {
+        result.setNrKlienta(QString{*_NrKlienta->value()});
+    }
+    if (_IDNabywcy.has_value()) {
+        result.setIDNabywcy(QString{*_IDNabywcy->value()});
+    }
+    return result;
+}
+
+Podmiot3 Podmiot2::toPodmiot3(QString opisRoli) const
+{
+    Podmiot3 result{this->_DaneIdentyfikacyjne.toDaneIdentyfikacyjne3(), std::move(opisRoli)};
+    if (_NrEORI.has_value()) {
+        result.setNrEORI(QString{*_NrEORI->value()});
+    }
+    if (_Adres.has_value()) {
+        result.setAdres(*_Adres);
+    }
+    if (_AdresKoresp.has_value()) {
+        result.setAdresKoresp(*_AdresKoresp);
+    }
+    for (const auto &dk : _DaneKontaktowe) {
+        result.addDaneKontaktowe(dk);
+    }
+    if (_NrKlienta.has_value()) {
+        result.setNrKlienta(QString{*_NrKlienta->value()});
+    }
+    if (_IDNabywcy.has_value()) {
+        result.setIDNabywcy(QString{*_IDNabywcy->value()});
+    }
+    return result;
+}
+
 Podmiot3::Podmiot3(DaneIdentyfikacyjne3 daneIdentyfikacyjne, Rola::Typ rola) :
     _DaneIdentyfikacyjne{std::move(daneIdentyfikacyjne)},
     _switch{Rola{rola}}

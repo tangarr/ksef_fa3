@@ -65,27 +65,6 @@ public:
     GV(Status status) : XmlValue(ToString(status)) {}
 };
 
-class Podmiot2 : public internal::XmlNamedNode<"Podmiot2">{
-    std::optional<internal::XmlString<"NrEORI">> _NrEORI;
-    DaneIdentyfikacyjne2 _DaneIdentyfikacyjne;
-    std::optional<Adres> _Adres;
-    std::optional<AdresKoresp> _AdresKoresp;
-    internal::XmlVector<DaneKontaktowe, 3> _DaneKontaktowe;
-    std::optional<internal::XmlString<"NrKlienta">> _NrKlienta;
-    std::optional<internal::XmlString<"IDNabywcy">> _IDNabywcy;
-    JST _JST;
-    GV _GV;
-public:
-    Podmiot2(DaneIdentyfikacyjne2 daneIdentyfikacyjne, bool jst, bool gv);
-    void setNrEORI(QString nrEORI);
-    void setAdres(Adres adres);
-    void setAdresKoresp(AdresKoresp adresKoresp);
-    std::expected<void, QString> addDaneKontaktowe(DaneKontaktowe daneKontaktowe);
-    void setNrKlienta(QString nrKlienta);
-    void setIDNabywcy(QString idNabywcy);
-    QVector<std::reference_wrapper<const internal::XmlNode>> elements() const override;
-};
-
 class Rola : public internal::XmlSequence {
 public:
     enum Typ {
@@ -111,6 +90,31 @@ public:
 };
 
 using RolaInna = internal::XmlMarkedElement<"RolaInna", internal::XmlString<"OpisRoli">>;
+
+class Podmiot3;
+
+class Podmiot2 : public internal::XmlNamedNode<"Podmiot2">{
+    std::optional<internal::XmlString<"NrEORI">> _NrEORI;
+    DaneIdentyfikacyjne2 _DaneIdentyfikacyjne;
+    std::optional<Adres> _Adres;
+    std::optional<AdresKoresp> _AdresKoresp;
+    internal::XmlVector<DaneKontaktowe, 3> _DaneKontaktowe;
+    std::optional<internal::XmlString<"NrKlienta">> _NrKlienta;
+    std::optional<internal::XmlString<"IDNabywcy">> _IDNabywcy;
+    JST _JST;
+    GV _GV;
+public:
+    Podmiot2(DaneIdentyfikacyjne2 daneIdentyfikacyjne, bool jst, bool gv);
+    void setNrEORI(QString nrEORI);
+    void setAdres(Adres adres);
+    void setAdresKoresp(AdresKoresp adresKoresp);
+    std::expected<void, QString> addDaneKontaktowe(DaneKontaktowe daneKontaktowe);
+    void setNrKlienta(QString nrKlienta);
+    void setIDNabywcy(QString idNabywcy);
+    QVector<std::reference_wrapper<const internal::XmlNode>> elements() const override;
+    Podmiot3 toPodmiot3(Rola::Typ rola) const;
+    Podmiot3 toPodmiot3(QString opisRoli) const;
+};
 
 
 class Podmiot3 : public internal::XmlNamedNode<"Podmiot3">{
